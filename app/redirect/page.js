@@ -1,15 +1,16 @@
 "use client"
-import React from 'react'
+import React, { Suspense } from 'react'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 
-const redirect = () => {
+function RedirectContent() {
 
     const router = useRouter()
     const searchParams = useSearchParams();
 
     const paymentId = searchParams.get("payment_id");
     const orderId = searchParams.get("order_id");
+
     return (
         <>
             <div className="navbar flex justify-around items-center bg-slate-300 h-16">
@@ -52,6 +53,14 @@ const redirect = () => {
             </div>
 
         </>
+    )
+}
+
+const redirect = () => {
+    return (
+        <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
+            <RedirectContent />
+        </Suspense>
     )
 }
 
