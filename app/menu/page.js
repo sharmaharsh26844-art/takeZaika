@@ -57,58 +57,71 @@ const menu = () => {
 
     return (
         <>
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick={false}
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-            />
-            <div className='text-5xl font-bold text-center mt-5'>Our Dishes</div>
-            <span className='text-2xl flex items-center justify-center mt-3'>"Discover the authentic flavors of North India, crafted with love and delivered hot to your doorstep."
-            </span>
-            <div className="items grid grid-cols-4  justify-center items-center m-auto w-[95%] mt-10 gap-5  px-3 mb-10">
-                {menuItems.map((items, index) => (
-                    <div key={index} className="container bg-red-900 h-[50vh] w-[40vh] rounded-4xl text-white ">
-                        <div className='h-[55%] overflow-hidden'>
-                            <img className='rounded-4xl  w-full h-full object-center shadow-2xl' src={items.image} alt={items.name} />
+      <ToastContainer position="top-right" autoClose={3000} theme="dark" />
 
-                        </div>
-                        <h2 className='text-center text-2xl font-medium mt-2'>{items.name}</h2>
+      {/* Header */}
+      <div className="text-4xl sm:text-5xl font-bold text-center mt-6">
+        Our Dishes
+      </div>
+      <p className="text-lg sm:text-2xl text-center mt-3 px-4 text-gray-700">
+        "Discover the authentic flavors of North India, crafted with love and delivered hot to your doorstep."
+      </p>
 
-                        <div className="container w-[80%] mx-auto mt-2">
-
-                            <span className=''>{items.description}</span>
-                            <div className='font-medium text-lg flex justify-between '>
-                                <span>Price:- ₹{items.price} </span>
-                                <span>Qty:- {items.quantity} </span>
-                            </div>
-                        </div>
-
-
-                        <div className="button flex items-center justify-center mt-3 gap-2  ">
-
-                            <button
-                                type="button"
-                                className="text-white bg-yellow-600 gap-2 hover:bg-yellow-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-2.5 py-2 inline-flex items-center"
-                                onClick={() => addToCart(items)}>
-                                <img src="/cart.gif" alt="" height={33} width={33} />
-                                Add to Cart
-                            </button>
-                            <span className='text-lg font-bold'>{getCartQuantity(items.id)}</span>
-                            <button onClick={() => addToCart(items)} className='px-3 py-1  rounded bg-yellow-600 hover:bg-yellow-700 focus:ring-red-300'>+</button>
-
-                        </div>
-                    </div>
-                ))}
+      {/* Grid Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-center m-auto w-[95%] mt-10 gap-6 px-3 mb-10">
+        {menuItems.map((item, index) => (
+          <div
+            key={index}
+            className="bg-red-900 rounded-3xl text-white overflow-hidden shadow-xl hover:scale-[1.02] transition-all duration-200"
+          >
+            {/* Image */}
+            <div className="h-48 sm:h-56 md:h-52 lg:h-48 overflow-hidden">
+              <img
+                className="w-full h-full object-cover"
+                src={item.image}
+                alt={item.name}
+              />
             </div>
 
-        </>
+            {/* Content */}
+            <div className="p-4 flex flex-col justify-between h-[55%]">
+              <h2 className="text-xl sm:text-2xl font-semibold text-center mt-1">
+                {item.name}
+              </h2>
+              <p className="text-sm sm:text-base mt-2 text-gray-200 line-clamp-3">
+                {item.description}
+              </p>
+
+              <div className="font-medium text-base sm:text-lg flex justify-between mt-3">
+                <span>₹{item.price}</span>
+                <span>{item.quantity}</span>
+              </div>
+
+              {/* Buttons */}
+              <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
+                <button
+                  type="button"
+                  className="flex items-center justify-center gap-2 bg-yellow-600 hover:bg-yellow-700 focus:ring-2 focus:ring-yellow-500 font-medium rounded-lg text-sm px-3 py-2"
+                  onClick={() => addToCart(item)}
+                >
+                  <img src="/cart.gif" alt="cart" height={30} width={30} />
+                  Add
+                </button>
+                <span className="text-lg font-bold">
+                  {getCartQuantity(item.id)}
+                </span>
+                <button
+                  onClick={() => addToCart(item)}
+                  className="px-3 py-2 rounded bg-yellow-600 hover:bg-yellow-700 focus:ring-2 focus:ring-yellow-500 text-sm"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
     )
 }
 
