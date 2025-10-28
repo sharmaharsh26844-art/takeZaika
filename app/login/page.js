@@ -70,35 +70,6 @@ const Login = () => {
             <span>Continue with LinkedIn</span>
           </button>
 
-          {/* Twitter (X) */}
-          <button
-            className="flex items-center justify-center w-full bg-white border border-gray-400 rounded-lg shadow-md px-4 py-2 text-sm sm:text-base font-medium text-gray-800 hover:bg-gray-200 transition"
-          >
-            <svg
-              className="h-5 w-5 sm:h-6 sm:w-6 mr-2"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="#1DA1F2"
-            >
-              <path d="M23.953 4.57a10.004 10.004 0 01-2.825.775 4.932 4.932 0 002.163-2.723 9.864 9.864 0 01-3.127 1.184A4.916 4.916 0 0016.616 3c-2.717 0-4.924 2.206-4.924 4.924 0 .386.045.762.127 1.122C7.728 8.857 4.1 6.865 1.671 3.875a4.902 4.902 0 00-.666 2.475c0 1.707.869 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06c0 2.385 1.693 4.374 3.946 4.826a4.996 4.996 0 01-2.224.084c.626 1.956 2.444 3.377 4.6 3.418A9.868 9.868 0 010 19.54 13.905 13.905 0 007.548 21.5c9.142 0 14.307-7.721 13.995-14.646a10.025 10.025 0 002.41-2.284z" />
-            </svg>
-            <span>Continue with Twitter</span>
-          </button>
-
-          {/* Facebook */}
-          <button
-            className="flex items-center justify-center w-full bg-white border border-gray-400 rounded-lg shadow-md px-4 py-2 text-sm sm:text-base font-medium text-gray-800 hover:bg-gray-200 transition"
-          >
-            <svg
-              className="h-5 w-5 sm:h-6 sm:w-6 mr-2"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="#1877F2"
-            >
-              <path d="M22.676 0H1.326A1.326 1.326 0 000 1.326v21.348A1.326 1.326 0 001.326 24h11.495v-9.294H9.691V11.09h3.13V8.414c0-3.1 1.894-4.788 4.662-4.788 1.325 0 2.463.098 2.795.142v3.243h-1.918c-1.505 0-1.796.716-1.796 1.766v2.313h3.59l-.467 3.616h-3.123V24h6.127A1.326 1.326 0 0024 22.674V1.326A1.326 1.326 0 0022.676 0z" />
-            </svg>
-            <span>Continue with Facebook</span>
-          </button>
 
           {/* GitHub */}
           <button
@@ -114,21 +85,6 @@ const Login = () => {
               <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.302...z" />
             </svg>
             <span>Continue with GitHub</span>
-          </button>
-
-          {/* Apple */}
-          <button
-            className="flex items-center justify-center w-full bg-white border border-gray-400 rounded-lg shadow-md px-4 py-2 text-sm sm:text-base font-medium text-gray-800 hover:bg-gray-200 transition"
-          >
-            <svg
-              className="h-5 w-5 sm:h-6 sm:w-6 mr-2"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="black"
-            >
-              <path d="M16.365 1.43c0 1.14-.417 2.09-1.25 2.85...z" />
-            </svg>
-            <span>Continue with Apple</span>
           </button>
         </div>
       </div>
